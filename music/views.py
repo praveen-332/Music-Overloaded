@@ -151,7 +151,6 @@ def create_album(request):
         if form.is_valid():
             album = form.save(commit=False)
             album.user = request.user
-            return render(request, 'music/create_album.html', context)
             album.save()
             return render(request,'music/detail.html',{'album': album})
         context = {

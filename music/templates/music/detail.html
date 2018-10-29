@@ -8,21 +8,11 @@
     <div class="row">
 
         <!-- Left Album Info -->
-        <div class="col-sm-4 col-md-3">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <a href="{% url 'music:detail' album.id %}">
-                            <h3>No image to display</h3>
-                    </a>
-                    </div>
-            </div>
-        </div>
 
         <!-- Right Song Info -->
         <div class="col-sm-8 col-md-9">
 
             <ul class="nav nav-pills" style="margin-bottom: 10px;">
-                <li role="presentation" class="active"><a href="{% url 'music:detail' album.id %}">View All</a></li>
                 <li role="presentation"><a href="{% url 'music:create_song' album.id %}">Add New Song</a></li>
             </ul>
 
@@ -39,6 +29,7 @@
                         <thead>
                         <tr>
                             <th>Title</th>
+                            <th>Playlist</th>
                             <th>Audio File</th>
                             <th>Favorite</th>
                             <th>Actions</th>
@@ -48,6 +39,7 @@
                         {% for song in album.song_set.all %}
                             <tr>
                                 <td>{{ song.song_title }}</td>
+                                <td>{{ song.album.album_title }}</td>
                                 <td>
                                     <a target="_blank" href="{{ song.audio_file.url }}">
                                         <button type="button" class="btn btn-success btn-xs">
