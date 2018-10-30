@@ -4,11 +4,11 @@ from django.db import models
 class Album(models.Model):
 
     user = models.ForeignKey(User, default=1)
-    album_title = models.CharField(max_length=500)
+    title = models.CharField(max_length=500)
     is_favorite = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.album_title
+        return self.title
 
 
 class Song(models.Model):

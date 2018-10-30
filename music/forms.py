@@ -23,4 +23,4 @@ class AlbumForm(forms.ModelForm):
 
     class Meta:
         model = Album
-        fields = ['album_title']
+        fields = ['title']

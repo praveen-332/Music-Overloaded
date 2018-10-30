@@ -39,7 +39,7 @@
                         {% for song in album.song_set.all %}
                             <tr>
                                 <td>{{ song.song_title }}</td>
-                                <td>{{ song.album.album_title }}</td>
+                                <td>{{ song.album.title }}</td>
                                 <td>
                                     <a target="_blank" href="{{ song.audio_file.url }}">
                                         <button type="button" class="btn btn-success btn-xs">
